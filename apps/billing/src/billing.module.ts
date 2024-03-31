@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { BillingController } from './billing.controller';
 import { BillingService } from './billing.service';
 import { ConfigModule } from '@nestjs/config';
-import Joi from 'joi';
+import * as Joi from 'joi';
 import { RmqModule } from '@app/common';
 
 @Module({

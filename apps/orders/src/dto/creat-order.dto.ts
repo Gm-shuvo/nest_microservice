@@ -1,5 +1,6 @@
 import {
   IsNotEmpty,
+  IsOptional,
   IsPhoneNumber,
   IsPositive,
   IsString,
@@ -17,5 +18,6 @@ export class CreateOrderDto {
   quantity: number;
 
   @IsPhoneNumber()
+  @IsOptional()
   phoneNumber?: string;
 }
