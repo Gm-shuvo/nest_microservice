@@ -25,9 +25,12 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
       ...document,
       _id: new Types.ObjectId(),
     });
-    return (
-      await createdDocument.save(options)
-    ).toJSON() as unknown as TDocument;
+    try {
+      return (await createdDocument.save(options)).toJSON() as TDocument;
+    } catch (err) {
+      this.logger.error('Error creating document', err);
+      throw err;
+    }
   }
 
   async findOne(filterQuery: FilterQuery<TDocument>): Promise<TDocument> {
