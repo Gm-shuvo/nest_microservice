@@ -22,15 +22,34 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# NestJS Microservices App for Customer Orders
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This repository contains a microservices-based application for handling customer orders, including services for order processing, billing, and authentication. Built with NestJS and leveraging RabbitMQ for inter-service communication, the architecture ensures scalable, efficient, and decoupled operations. This README provides an overview of the system, instructions for setting it up, and guidelines for contributing.
 
-## Installation
+## Architecture Overview
 
-```bash
-$ npm install
-```
+The application is divided into three main services:
+
+- **Order Service**: Manages customer orders, product listings, and order status updates.
+- **Billing Service**: Responsible for generating bills for orders placed through the Order Service.
+- **Authentication Service**: Handles user authentication and authorizes operations across services.
+
+Communication among services is facilitated by RabbitMQ, ensuring reliable and asynchronous message passing.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed on your system:
+
+- Docker and Docker Compose
+- Node.js (version 14 or later)
+- NestJS CLI
+
+## Setup and Installation
+
+1. **Clone the Repository**
+
+git clone https://github.com/Gm-shuvo/nest_microservice.git
+cd nest_microservice
 
 ## Running the app
 
