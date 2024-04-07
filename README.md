@@ -22,7 +22,7 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-# NestJS Microservices App for Customer Orders
+# NestJS Microservices App for Customer Orders using RabbitMq
 
 This repository contains a microservices-based application for handling customer orders, including services for order processing, billing, and authentication. Built with NestJS and leveraging RabbitMQ for inter-service communication, the architecture ensures scalable, efficient, and decoupled operations. This README provides an overview of the system, instructions for setting it up, and guidelines for contributing.
 
@@ -52,42 +52,48 @@ git clone https://github.com/Gm-shuvo/nest_microservice.git
 
 cd nest_microservice
 ```
-## Running the app
+2. **Start RabbitMQ and Services with Docker Compose**
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+docker-compose up --build
 ```
+This command builds and starts the services defined in `docker-compose.yml`, including RabbitMQ.
 
-## Test
+3. **Accessing the Services**
+- The services are accessible on the following ports:
+  - Order Service: http://localhost:3000
+  - Billing Service: http://localhost:3001
+  - Authentication Service: http://localhost:3002
+- RabbitMQ Management Interface: http://localhost:15672 (default credentials: `guest`/`guest`)
 
+## Usage
+
+Provide examples of how to use your app here. For instance:
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+# Place an order
+curl -X POST http://localhost:3000/orders -d '{"productId": "123", "quantity": "2"}' -H "Content-Type: application/json"
 ```
+# Development
+Running Services Locally
+To run individual services for development purposes, navigate to the service directory and run:
+```bash
+nest start --watch
+```
+## Running Tests
+Explain how to run the automated tests for this system.
+```bash
+npm run test
+```
+## Contributing
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+We welcome contributions! Please read our [CONTRIBUTING.md](https://github.com/<your-username>/<repository-name>/blob/main/CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests to us.
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+This project is licensed under the [MIT License](https://github.com/Gm-shuvo/nest_microservice/blob/main/LICENSE).
+
+## Acknowledgments
+
+- NestJS Community
+- RabbitMQ
+
