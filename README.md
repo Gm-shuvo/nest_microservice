@@ -71,7 +71,7 @@ This command builds and starts the services defined in `docker-compose.yml`, inc
 Provide examples of how to use your app here. For instance:
 ```bash
 # Place an order
-curl -X POST http://localhost:3000/orders -d '{"productId": "123", "quantity": "2"}' -H "Content-Type: application/json"
+curl -X POST http://localhost:3000/orders -d '{"name": "IPhone 14 pro", "quantity": "2", "price": 99999}' -H "Content-Type: application/json"
 ```
 # Development
 Running Services Locally
