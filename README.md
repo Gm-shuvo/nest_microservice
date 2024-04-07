@@ -47,10 +47,11 @@ Before you begin, ensure you have the following installed on your system:
 ## Setup and Installation
 
 1. **Clone the Repository**
-
+```bash
 git clone https://github.com/Gm-shuvo/nest_microservice.git
-cd nest_microservice
 
+cd nest_microservice
+```
 ## Running the app
 
 ```bash
